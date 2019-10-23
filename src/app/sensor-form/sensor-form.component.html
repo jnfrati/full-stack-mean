@@ -1,0 +1,41 @@
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+<div class="sensor-form-container">
+    <form 
+        [formGroup]="newSensor" 
+        (ngSubmit)="onSubmit()"
+        fxLayout="column"
+    >
+    <h1>Nuevo sensor</h1>
+        <div>
+            <mat-form-field
+                [floatLabel]="'auto'">
+                <input matInput placeholder="Nombre" formControlName="name" required>
+            </mat-form-field>
+        </div>
+        
+        <h3>Ubicacion</h3>
+        <div>
+            <mat-form-field [floatLabel]="'auto'">
+                <input type="number" matInput required placeholder="Latitud" formControlName="lat">
+            </mat-form-field>
+            <mat-form-field [floatLabel]="'auto'">
+                <input type="number" matInput required placeholder="Longitud" formControlName="lng">
+            </mat-form-field>
+        </div>
+        <h3>Rangos</h3>
+        <div>
+            <mat-form-field [floatLabel]="'auto'">
+                <input type="number" matInput required placeholder="Valor Minimo" formControlName="minValue">
+            </mat-form-field>
+            <mat-form-field [floatLabel]="'auto'">
+                <input type="number" matInput required placeholder="Valor Maximo" formControlName="maxValue">
+            </mat-form-field>
+        </div>
+                                    
+        <mat-checkbox formControlName="active">Sensor activo?</mat-checkbox>
+        <div fxLayoutAlign="space-between">        
+            <button mat-button color="warning" (click)="cancelForm($event)">Cancelar</button>
+            <button mat-flat-button color="primary" [disabled]="!newSensor.valid">Crear</button>
+        </div>
+    </form>
+</div>

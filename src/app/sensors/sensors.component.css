@@ -1,0 +1,24 @@
+.content{
+    height: 100%;
+}
+
+.fullWidth{
+    width: 100%;
+}
+
+
+.container{
+    width: 95%;
+    height: 90%;
+    padding: 10px;
+    margin: 5px auto;
+}
+
+.table-row{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.table-row:hover{
+    background: #cbd5e0;
+}

@@ -1,0 +1,39 @@
+<mat-sidenav-container
+    class="content"    
+    >
+  <mat-sidenav-content >
+    <mat-card class="sensor-list container">
+      <mat-card-title fxLayout="row" fxLayoutAlign="space-between">
+        Lista de eventos del sensor: 
+        <button color="primary" mat-flat-button (click)="rightSideBar.open()">Nuevo evento</button>
+      </mat-card-title>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngFor="let event of events">
+            {{event.value}}
+            {{event.createdAt}}
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-sidenav-content>
+  <!-- <mat-sidenav #rightSideBar
+                 [fixedInViewport]="true" [fixedTopGap]="false"
+                 [fixedBottomGap]="false"
+                 disableClose
+                 position="end"
+                 class="creation-form-sidenav"
+                 >
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <form (ngSubmit)="onSubmit()" #newEvent="ngForm">
+            <mat-slider
+            thumbLabel
+            [min]="sensor.minValue || 0"
+            [max]="sensor.maxValue || 0"
+            [(ngModel)]="newEvent.value"
+            name="value"
+            ></mat-slider>
+        </form>
+    </div> -->
+  <!-- </mat-sidenav> -->
+</mat-sidenav-container>
